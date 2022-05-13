@@ -39,11 +39,6 @@ func main() {
 		fmt.Println("Fact clients failed ", err)
 	}
 
-	err = remindFact(db)
-	if err != nil {
-		fmt.Println("Cannot remind fact to clients: ", err)
-	}
-
 	err = deleteAsked(db)
 	if err != nil {
 		fmt.Println("Delete accounts failed")
@@ -107,74 +102,6 @@ func fact(db *sqlx.DB) (err error) {
 	return err
 }
 
-// Fact reminder
-func remindFact(db *sqlx.DB) (err error) {
-	// select etabs who didn't pay
-	var ids []int
-	err = db.Select(&ids, "SELECT etab_id FROM factures JOIN etabs ON etabs.id = factures.etab_id WHERE payed is NULL AND etabs.suspended != 1 GROUP BY etab_id")
-	if len(ids) >= 1 {
-		for _, id := range ids {
-			// get more details
-			var etab eapFact.FactEtab
-			err = db.Get(&etab, "SELECT name, owner_civility, owner_name, owner_surname, mail, phone, fact_addr, fact_cp, fact_city, fact_country, offer FROM etabs WHERE etabs.id = ?", id)
-			if err != nil {
-				fmt.Println("cannot get infos: ", err)
-			} else {
-				var unpaid eapMail.Unpaid
-				err = db.Get(&unpaid, `
-					SELECT 
-						COUNT(factures.id) AS number,
-						(offers.priceTTC * COUNT(factures.id)) AS total
-					FROM factures 
-						JOIN etabs ON etabs.id = factures.etab_id 
-						JOIN offers ON offers.id = etabs.offer
-					WHERE factures.payed is NULL AND etab_id = ?`,
-					id)
-
-				if err != nil {
-					fmt.Println("Cannot get unpayed: ", err)
-				} else {
-					if unpaid.Number > 2 {
-						_, err = db.Exec("UPDATE etabs SET suspended = 1 WHERE id = ?", id)
-						if err != nil {
-							fmt.Println("accunt suspend failed: ", err)
-						} else {
-							err = eapMail.SuspendCreanceMail(etab, unpaid)
-							if err != nil {
-								fmt.Println("send warning failed: ", err)
-							}
-						}
-					} else {
-						var result []string
-						err = db.Select(&result, "SELECT link FROM factures WHERE payed is NULL AND etab_id = ?", id)
-						if err != nil {
-							fmt.Println("cannot get fact links: ", err)
-						} else {
-							unpaid.Facts = result
-							// send mail now
-							err = eapMail.CreanceMail(etab, unpaid)
-							if err != nil {
-								fmt.Println("cannot send fact reminder: ", err)
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	return err
-}
-
-// Report bug
-func report(db *sqlx.DB, etab_id int, fact_id int64, status string) {
-	_, err := db.Exec("INSERT INTO fact_logs (fact_id, etab_id, status, created_at) VALUES (?, ?, ?, NOW())", fact_id, etab_id, status)
-
-	if err != nil {
-		fmt.Println("Error logging send results: ", err)
-	}
-}
-
 func deleteAsked(db *sqlx.DB) (err error) {
 	var ids []int
 	// get accounts to delete
@@ -231,4 +158,13 @@ func deleteAsked(db *sqlx.DB) (err error) {
 		}
 	}
 	return err
+}
+
+// Report bug
+func report(db *sqlx.DB, etab_id int, fact_id int64, status string) {
+	_, err := db.Exec("INSERT INTO fact_logs (fact_id, etab_id, status, created_at) VALUES (?, ?, ?, NOW())", fact_id, etab_id, status)
+
+	if err != nil {
+		fmt.Println("Error logging send results: ", err)
+	}
 }
