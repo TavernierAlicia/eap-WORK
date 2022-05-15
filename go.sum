@@ -56,6 +56,8 @@ github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513211200-85a5e9da7a95 h1:PwSTZ8
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513211200-85a5e9da7a95/go.mod h1:9mvBylfpkbog4QpS1Ocwv6gRMZ9hILeB5oT00wsL+bs=
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513215433-303ce754cc1c h1:C1kRJ4QDB2aiip2CPZn9vSw1ReehBiGB90CNPoGIS6U=
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513215433-303ce754cc1c/go.mod h1:9mvBylfpkbog4QpS1Ocwv6gRMZ9hILeB5oT00wsL+bs=
+github.com/TavernierAlicia/eap-MAIL v0.0.0-20220515134230-6d0686f1b827 h1:WLbTnNDJapi7XBVbstMP4Zr1HpDnLrNbyAxyRVMMmuw=
+github.com/TavernierAlicia/eap-MAIL v0.0.0-20220515134230-6d0686f1b827/go.mod h1:9mvBylfpkbog4QpS1Ocwv6gRMZ9hILeB5oT00wsL+bs=
 github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
 github.com/boombuler/barcode v1.0.1 h1:NDBbPmhS+EqABEs5Kg3n/5ZNjy73Pz7SIV+KCeqyXcs=
 github.com/boombuler/barcode v1.0.1/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
