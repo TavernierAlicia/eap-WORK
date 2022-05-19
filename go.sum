@@ -40,6 +40,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/TavernierAlicia/eap-FACT v0.0.0-20220513123934-7797e4bb8dec h1:EMSXxNXgwgw3wfnI12skA/p2rWF26YF7ayRy7wgbag0=
 github.com/TavernierAlicia/eap-FACT v0.0.0-20220513123934-7797e4bb8dec/go.mod h1:xorMqDbevCvzlFs0BkEYfCD0NizL1FV0lzFiV41tUjI=
+github.com/TavernierAlicia/eap-FACT v0.0.0-20220516184454-0e128e5dd519 h1:abbNHjrQ0+H0/HSgELOMbMW0bKP+BI1bb4HaBHIE1No=
+github.com/TavernierAlicia/eap-FACT v0.0.0-20220516184454-0e128e5dd519/go.mod h1:xorMqDbevCvzlFs0BkEYfCD0NizL1FV0lzFiV41tUjI=
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513132030-92d4d9258e59 h1:WKTs0CNKYfzEm/n1C9i1dL7o3/KMOO8jAWT+dBG8kYI=
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513132030-92d4d9258e59/go.mod h1:9mvBylfpkbog4QpS1Ocwv6gRMZ9hILeB5oT00wsL+bs=
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513174657-35efbc7c69e7 h1:ZzXSmEL3O1iwqvEx4UVpN+3Ke13vBvHHJiXG0QtebZs=
@@ -58,6 +60,8 @@ github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513215433-303ce754cc1c h1:C1kRJ4
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220513215433-303ce754cc1c/go.mod h1:9mvBylfpkbog4QpS1Ocwv6gRMZ9hILeB5oT00wsL+bs=
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220515134230-6d0686f1b827 h1:WLbTnNDJapi7XBVbstMP4Zr1HpDnLrNbyAxyRVMMmuw=
 github.com/TavernierAlicia/eap-MAIL v0.0.0-20220515134230-6d0686f1b827/go.mod h1:9mvBylfpkbog4QpS1Ocwv6gRMZ9hILeB5oT00wsL+bs=
+github.com/TavernierAlicia/eap-MAIL v0.0.0-20220516184426-116c98fa25cb h1:kYOHMaeyvpoIE9pZPUZrSV+eNkgF0yuWrpN6mWvTmmk=
+github.com/TavernierAlicia/eap-MAIL v0.0.0-20220516184426-116c98fa25cb/go.mod h1:9mvBylfpkbog4QpS1Ocwv6gRMZ9hILeB5oT00wsL+bs=
 github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
 github.com/boombuler/barcode v1.0.1 h1:NDBbPmhS+EqABEs5Kg3n/5ZNjy73Pz7SIV+KCeqyXcs=
 github.com/boombuler/barcode v1.0.1/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=

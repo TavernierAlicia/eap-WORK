@@ -3,8 +3,8 @@ module worker
 go 1.17
 
 require (
-	github.com/TavernierAlicia/eap-FACT v0.0.0-20220513123934-7797e4bb8dec // indirect
-	github.com/TavernierAlicia/eap-MAIL v0.0.0-20220515134230-6d0686f1b827 // indirect
+	github.com/TavernierAlicia/eap-FACT v0.0.0-20220516184454-0e128e5dd519 // indirect
+	github.com/TavernierAlicia/eap-MAIL v0.0.0-20220516184426-116c98fa25cb // indirect
 	github.com/boombuler/barcode v1.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect

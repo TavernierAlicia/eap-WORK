@@ -70,7 +70,7 @@ func fact(db *sqlx.DB) (err error) {
 					etab.Fact_infos.Uuid = uuid.New().String()
 					etab.Fact_infos.IsFirst = true
 					etab.Fact_infos.Date = time.Now().Format("02-01-2006")
-					etab.Fact_infos.Link = "./media/factures/" + etab.Fact_infos.Uuid + "_" + etab.Fact_infos.Date + ".pdf"
+					etab.Fact_infos.Link = viper.GetString("links.cdn_fact") + etab.Fact_infos.Uuid + "_" + etab.Fact_infos.Date + ".pdf"
 
 					// create new fact
 					insertFact, err := db.Exec("INSERT INTO factures (uuid, etab_id, link, created) VALUES (?, ?, ?, NOW())", etab.Fact_infos.Uuid, id, etab.Fact_infos.Link)
